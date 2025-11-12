@@ -467,7 +467,7 @@ footer {
     background-color: #007bff; /* สีหลัก (ปรับได้ตามธีมเว็บ) */
     color: white;
     border: none;
-    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    border-radius: 100%; /* ทำให้เป็นวงกลม */
     font-size: 24px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
