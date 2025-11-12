@@ -12,22 +12,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
-<script>
-    (function(d, s, id) {
-    var js, bjs = d.getElementsByTagName(s)[0];
-    if(d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://console.botnoi.ai/customerchat/index.js';
-    bjs.parentNode.insertBefore(js, bjs);
-    } (document, 'script', 'bn-jssdk'));
-</script>
 
-  <div class="bn-customerchat"
+    <div id="bn-root"></div>
+
+    <script>window.onload = function() { BN.init({ version: '1.0' }) }</script>
+    <script>
+        (function(d, s, id) {
+            var js, bjs = d.getElementsByTagName(s)[0];
+            if(d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://console.botnoi.ai/customerchat/index.js';
+            bjs.parentNode.insertBefore(js, bjs);
+        } (document, 'script', 'bn-jssdk'));
+    </script>
+
+    <div class="bn-customerchat"
         bot_id="68f8a69d47ecdfb86c7e3f67"
-        bot_logo="https://bn-sme-production-ap-southeast-1.s3.amazonaws.com/68f8a69d47ecdfb86c7e3f67/bcd97575-1371-4234-bd73-e0ffffb2c300.png"
+        bot_logo="https://bn-sme-production-ap-southeast-1.s3.amazonaws.com/68f8a69d47ecdfb86c7e3f67/59a2cb0d-23bd-45e0-86a1-0c2bdf0321b6.png"
         bot_name="Charm of Samutsongkhram"
         theme_color="#67a896"
-        locale="OPTIONAL ATTRIBUTE, YOU CAN CHANGE LANGUAGE TO THAI,English LANGUAGE [EX. th,eng]"
+        locale="OPTIONAL ATTRIBUTE, YOU CAN CHANGE LANGUAGE TO THAI LANGUAGE [EX. th]"
         logged_in_greeting="OPTIONAL ATTRIBUTE, YOU CAN CHANGE GREETING MESSAGE IN WELCOME"
         greeting_message="สวัสดีค่ะ 😊 ยินดีต้อนรับสู่ระบบบริการของเรา ต้องการให้ช่วยเรื่องอะไรดีคะ?"
     </div>
