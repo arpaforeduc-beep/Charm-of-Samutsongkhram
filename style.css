@@ -462,28 +462,32 @@ footer {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: transparent; /* เอาสีพื้นออกเพื่อโชว์รูป */
-    border: none;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.15); /* โปร่งใสเล็กน้อย */
+    backdrop-filter: blur(6px); /* เบลอพื้นหลังเบาๆ (ถ้าเบราว์เซอร์รองรับ) */
+    border: 2px solid rgba(255, 255, 255, 0.4); /* ขอบเงาอ่อน */
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* เงาสวย ๆ */
     z-index: 9998;
-    transition: transform 0.2s;
-    padding: 0;
-    overflow: hidden; /* สำคัญ! ตัดส่วนเกินให้เป็นวงกลม */
-}
-
-.chat-toggle-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ทำให้รูปเต็มวงกลม */
-    border-radius: 50%;
+    transition: all 0.25s ease;
 }
 
 .chat-toggle-button:hover {
-    transform: scale(1.0); /* ขยายเล็กน้อยเมื่อเมาส์ชี้ */
+    transform: scale(1.08); /* ขยายเบา ๆ ตอนชี้ */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.chat-toggle-button img {
+    width: 80%; /* ให้รูปไม่ชิดขอบเกินไป */
+    height: 80%;
+    object-fit: contain;
+    border-radius: 50%; /* ให้รูปกลมแม้จะมีพื้นหลัง */
+    pointer-events: none; /* ป้องกันไม่ให้คลิกโดนรูป */
 }
 
 /* 2. สไตล์ของหน้าต่างแชท (ที่ซ่อนไว้) */
