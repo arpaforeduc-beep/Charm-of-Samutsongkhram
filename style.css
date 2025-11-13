@@ -478,8 +478,8 @@ footer {
 .chat-toggle-button img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ทำให้รูปเต็มวงกลม */
-    border-radius: 100%;
+    overflow: hidden; /* ทำให้รูปเต็มวงกลม */
+    border-radius: 50%;
 }
 
 .chat-toggle-button:hover {
