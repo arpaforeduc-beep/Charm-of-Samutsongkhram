@@ -460,10 +460,10 @@ footer {
 /* 1. สไตล์ของไอคอนปุ่มแชท (มุมขวาล่าง) */
 .chat-toggle-button {
     position: fixed; /* ยึดตำแหน่งไว้กับหน้าจอ */
-    bottom: 50px;
-    right: 50px;
-    width: 80px;
-    height: 80px;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
     background-color: #007bff; /* สีหลัก (ปรับได้ตามธีมเว็บ) */
     color: white;
     border: none;
