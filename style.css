@@ -465,29 +465,39 @@ footer {
     width: 70px;
     height: 70px;
     background-color: rgba(255, 255, 255, 0.15); /* โปร่งใสเล็กน้อย */
-    backdrop-filter: blur(6px); /* เบลอพื้นหลังเบาๆ (ถ้าเบราว์เซอร์รองรับ) */
-    border: 2px solid rgba(255, 255, 255, 0.4); /* ขอบเงาอ่อน */
-    border-radius: 50%;
-    display: flex;
+    backdrop-filter: blur(6px); /* เอฟเฟกต์เบลอพื้นหลัง (หรู ๆ) */
+    border: 2px solid rgba(255, 255, 255, 0.4); /* ขอบนวล ๆ */
+    border-radius: 50%; /* ทำให้ปุ่มเป็นวงกลม */
+    display: flex; /* จัดให้อยู่กลางทั้งแนวตั้งและแนวนอน */
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* เงาสวย ๆ */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* เงาเบา ๆ */
     z-index: 9998;
     transition: all 0.25s ease;
+    animation: pop 0.4s ease-out; /* แอนิเมชันตอนโผล่มา */
 }
 
+/* เอฟเฟกต์ตอนเอาเมาส์ชี้ */
 .chat-toggle-button:hover {
-    transform: scale(1.08); /* ขยายเบา ๆ ตอนชี้ */
+    transform: scale(1.08);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
+/* ปรับรูปบอทให้กลมและอยู่พอดี */
 .chat-toggle-button img {
-    width: 80%; /* ให้รูปไม่ชิดขอบเกินไป */
+    width: 80%; /* ขนาดพอดีไม่ชิดขอบ */
     height: 80%;
     object-fit: contain;
-    border-radius: 50%; /* ให้รูปกลมแม้จะมีพื้นหลัง */
-    pointer-events: none; /* ป้องกันไม่ให้คลิกโดนรูป */
+    border-radius: 50%;
+    pointer-events: none; /* ไม่ให้คลิกโดนรูป */
+}
+
+/* แอนิเมชันตอนปุ่มปรากฏ */
+@keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
 }
 
 /* 2. สไตล์ของหน้าต่างแชท (ที่ซ่อนไว้) */
