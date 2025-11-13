@@ -466,7 +466,7 @@ footer {
     height: 60px;
     background-color: transparent; /* เอาสีพื้นออกเพื่อโชว์รูป */
     border: none;
-    border-radius: 80%;
+    border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 9998;
@@ -479,7 +479,7 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover; /* ทำให้รูปเต็มวงกลม */
-    border-radius: 50%;
+    border-radius: 100%;
 }
 
 .chat-toggle-button:hover {
