@@ -25,14 +25,20 @@
         } (document, 'script', 'bn-jssdk'));
     </script>
 
+    <script>
+      const userLang = navigator.language || navigator.userLanguage;
+      document.querySelector('.bn-customerchat').setAttribute('locale', userLang.startsWith('th') ? 'th' : 'en');
+    </script>
+
     <div class="bn-customerchat"
-        bot_id="68f8a69d47ecdfb86c7e3f67"
-        bot_logo="https://images.unsplash.com/vector-1763115904279-8b12d4521679?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        bot_name="Charm of Samutsongkhram"
-        theme_color="#67a896"
-        locale="OPTIONAL ATTRIBUTE, YOU CAN CHANGE LANGUAGE TO THAI LANGUAGE [EX. th]"
-        logged_in_greeting="OPTIONAL ATTRIBUTE, YOU CAN CHANGE GREETING MESSAGE IN WELCOME"
-        greeting_message="สวัสดีค่ะ 😊 ยินดีต้อนรับสู่ระบบบริการของเรา ต้องการให้ช่วยเรื่องอะไรดีคะ?"
+    bot_id="68f8a69d47ecdfb86c7e3f67"
+    bot_logo="https://unsplash.com/illustrations/2yj3r7dBK6E"
+    bot_name="Charm of Samutsongkhram"
+    theme_color="#67a896"
+    locale="th"
+    logged_in_greeting="ยินดีให้บริการค่ะ 😄"
+    greeting_message="สวัสดีค่ะ 😊 ยินดีต้อนรับสู่ระบบบริการของเรา ต้องการให้ช่วยเรื่องอะไรดีคะ?"
+    >
     </div>
 
 <body>
