@@ -125,6 +125,9 @@ nav.scrolled {
     color: white;
     position: relative;
     overflow: hidden;
+    
+/* เพิ่มเงาให้ตัวหนังสือ */
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
 }
 
 .hero::before {
