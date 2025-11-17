@@ -10,37 +10,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Charm:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-        <!-- Chatbot Button -->
-    <div class="chat-button">
-        <img src="img/Bot-logo.png" alt="Chat" style="width: 100%; height: 100%; object-fit: contain; padding: 8px;">
-    </div>
+    
+<!-- Chatbot Button -->
+<div class="chat-button">
+    <img src="img/bot-logo.png" alt="Chat" style="width: 100%; height: 100%; object-fit: contain; padding: 8px;">
+</div>
 
-    <!-- Chatbot Integration -->
-    <div id="bn-root"></div>
-    <script>window.onload = function() { BN.init({ version: '1.0' }) }</script>
-    <script>
-        (function(d, s, id) {
-            var js, bjs = d.getElementsByTagName(s)[0];
-            if(d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://console.botnoi.ai/customerchat/index.js';
-            bjs.parentNode.insertBefore(js, bjs);
-        } (document, 'script', 'bn-jssdk'));
-    </script>
-    <script>
+<!-- โหลดสคริปต์ Botnoi Customer Chat -->
+<script>
+    (function(d, s, id) {
+        var js, bjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://console.botnoi.ai/customerchat/index.js';
+        bjs.parentNode.insertBefore(js, bjs);
+    }(document, 'script', 'bn-jssdk'));
+</script>
+
+<!-- Chatbot Component -->
+<div class="bn-customerchat"
+    bot_id="68f8a69d47ecdfb86c7e3f67"
+    bot_logo="img/bot-logo.png"
+    bot_name="น้องสามน้ำ - Charm of Samutsongkhram"
+    theme_color="#2563eb"
+    locale="th"
+    logged_in_greeting="ยินดีให้บริการค่ะ 😄"
+    greeting_message="สวัสดีค่ะ 😊 ยินดีต้อนรับสู่ระบบบริการของเรา ต้องการให้ช่วยเรื่องอะไรดีคะ?">
+</div>
+
+<!-- ตั้งค่าภาษาอัตโนมัติ -->
+<script>
+    window.addEventListener("load", function() {
         const userLang = navigator.language || navigator.userLanguage;
-        document.querySelector('.bn-customerchat')?.setAttribute('locale', userLang.startsWith('th') ? 'th' : 'en');
-    </script>
-    <div class="bn-customerchat"
-        bot_id="68f8a69d47ecdfb86c7e3f67"
-        bot_logo="img/bot-logo.png"
-        bot_name="น้องสามน้ำ - Charm of Samutsongkhram"
-        theme_color="#2563eb"
-        locale="th"
-        logged_in_greeting="ยินดีให้บริการค่ะ 😄"
-        greeting_message="สวัสดีค่ะ 😊 ยินดีต้อนรับสู่ระบบบริการของเรา ต้องการให้ช่วยเรื่องอะไรดีคะ?"
-    >
-    </div>
+        const chatbox = document.querySelector('.bn-customerchat');
+        if (chatbox) {
+            chatbox.setAttribute('locale', userLang.startsWith('th') ? 'th' : 'en');
+        }
+    });
+</script>
+
 
 <body>
     <!-- Navigation -->
