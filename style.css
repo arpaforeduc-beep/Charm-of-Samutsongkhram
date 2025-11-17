@@ -106,7 +106,7 @@ nav.scrolled {
     left: 0;
     width: 0;
     height: 2px;
-    background: <img src="img/logo.png" alt="แบล็คกราวน์">;
+    background: var(--primary-color);
     transition: width 0.3s;
 }
 
@@ -117,8 +117,7 @@ nav.scrolled {
 /* Hero Section */
 .hero {
     margin-top: 80px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(59, 130, 246, 0.95)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232563eb" width="1200" height="600"/><path fill="%2360a5fa" opacity="0.2" d="M0 300 Q300 200 600 300 T1200 300 V600 H0 Z"/></svg>');
+    background: <img src="https://export-download.canva.com/FJV-Y/DAG2PFFJV-Y/95/0/0002-433956309551156469.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20251117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251117T121612Z&X-Amz-Expires=13566&X-Amz-Signature=23af46d8da96eab76a74cb82ddfe743cf9575c965e6c43a5364fe8b1cfce30e3&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27%25F0%259F%2590%259F.png&response-expires=Mon%2C%2017%20Nov%202025%2016%3A02%3A18%20GMT" alt="น้องสามน้ำ-บอทมาสคอต">
     background-size: cover;
     padding: 5rem 5%;
     color: white;
