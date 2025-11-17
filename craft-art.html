@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ศิลปะและหัตถกรรม - เสน่ห์เมืองสามน้ำ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Charm:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: var(--bg-light);
+        }
+
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+            margin-top: 100px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .page-title {
+            font-size: 3rem;
+            color: var(--primary-color);
+            font-family: 'Charm', cursive;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--light-blue);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-family: 'Charm', cursive;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2.5rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .list-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .workshop-card {
+            background: white;
+            border: 2px solid var(--light-blue);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: all 0.3s;
+        }
+
+        .workshop-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateX(10px);
+            border-color: var(--primary-color);
+        }
+
+        .workshop-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .workshop-detail {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            font-family: 'Charm', cursive;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="Logo">
+                </div>
+                <span>เสน่ห์เมืองสามน้ำ</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="#quiz">ค้นหาวัฒนธรรม</a></li>
+                <li><a href="tradition-page.html">ประเพณีและเทศกาล</a></li>
+                <li><a href="craft-art-page.html">ศิลปะและหัตถกรรม</a></li>
+                <li><a href="food-page.html">อาหารท้องถิ่น</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <a href="index.html" class="back-button">← กลับหน้าหลัก</a>
+
+        <div class="page-header">
+            <div class="page-icon">🎨</div>
+            <h1 class="page-title">ศิลปะและหัตถกรรม</h1>
+            <p class="page-subtitle">งานฝีมือ ศิลปะพื้นบ้าน</p>
+        </div>
+
+        <!-- การจักสาน -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🧺</span>
+                การจักสาน
+            </h2>
+            <p class="content-text">
+                การจักสานเป็นภูมิปัญญาท้องถิ่นที่สืบทอดมาแต่โบราณ ใช้วัสดุจากธรรมชาติที่หาได้ในท้องถิ่น เช่น ไม้ไผ่ เถาวัลย์ หวาย และกก มาสานเป็นเครื่องใช้ในชีวิตประจำวัน งานจักสานของสมุทรสงครามมีความประณีตและทนทาน
+            </p>
+
+            <div class="image-gallery">
+                <div class="gallery-item">🧺</div>
+                <div class="gallery-item">👜</div>
+                <div class="gallery-item">🪑</div>
+                <div class="gallery-item">🎩</div>
+            </div>
+
+            <h3 class="section-title" style="font-size: 1.5rem;">
+                <span class="section-icon">🎨</span>
+                ประเภทของงานจักสาน
+            </h3>
+            <ul class="info-list">
+                <li>
+                    <span class="list-icon">🧺</span>
+                    <div>
+                        <strong>จักสานไม้ไผ่</strong><br>
+                        ตะกร้า กระบุง ตะแกรง เครื่องใช้ในครัวเรือน ทนทานและใช้งานได้นาน ราคา 50-500 บาท
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">🪑</span>
+                    <div>
+                        <strong>เฟอร์นิเจอร์หวาย</strong><br>
+                        เก้าอี้ โต๊ะ ชั้นวางของ สวยงามและแข็งแรง เหมาะกับบ้านสไตล์โมเดิร์น ราคา 1,000-10,000 บาท
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">👜</span>
+                    <div>
+                        <strong>งานสานกก</strong><br>
+                        เสื่อกก กระเป๋า หมวก ของตกแต่งบ้าน ลวดลายสวยงาม ราคา 100-1,500 บาท
+                    </div>
+                </li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong style="font-size: 1.2rem; color: var(--primary-color);">📍 เรียนรู้และซื้อได้ที่</strong><br>
+                <p style="margin-top: 0.5rem; line-height: 1.8;">
+                    • หมู่บ้านหัตถกรรมตำบลบ้านปรก<br>
+                    • ตลาดน้ำอัมพวา (มีการสาธิตและจำหน่าย)<br>
+                    • ศูนย์วัฒนธรรมจังหวัดสมุทรสงคราม<br>
+                    • กลุ่มวิสาหกิจชุมชนต่างๆ
+                </p>
+            </div>
+        </div>
+
+        <!-- การทอผ้า -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🧵</span>
+                การทอผ้า
+            </h2>
+            <p class="content-text">
+                ผ้าทอพื้นบ้านของสมุทรสงครามมีลวดลายเฉพาะถิ่น สะท้อนวิถีชีวิตและความเชื่อของคนในท้องถิ่น โดยเฉพาะผ้าขาวม้าที่ใช้ในชีวิตประจำวันและพิธีกรรมต่างๆ
+            </p>
+
+            <ul class="info-list">
+                <li>
+                    <span class="list-icon">👘</span>
+                    <div>
+                        <strong>ผ้าขาวม้า</strong><br>
+                        ผ้าลายตาราง ใช้ทำผ้าเช็ดตัว ผ้าห่ม ราคา 100-500 บาท/ผืน
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">🎨</span>
+                    <div>
+                        <strong>ผ้าไทย</strong><br>
+                        ผ้าถุง ผ้าซิ่น ลวดลายสวยงาม ใช้ในงานพิธี ราคา 500-5,000 บาท
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">💙</span>
+                    <div>
+                        <strong>ผ้าย้อมคราม</strong><br>
+                        สีธรรมชาติจากต้นคราม สีน้ำเงินเข้มสวยงาม ราคา 800-3,000 บาท
+                    </div>
+                </li>
+            </ul>
+
+            <div class="image-gallery">
+                <div class="gallery-item">🧵</div>
+                <div class="gallery-item">👘</div>
+                <div class="gallery-item">🎨</div>
+                <div class="gallery-item">💙</div>
+            </div>
+        </div>
+
+        <!-- เครื่องประดับจากเปลือกหอย -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🐚</span>
+                เครื่องประดับจากเปลือกหอย
+            </h2>
+            <p class="content-text">
+                เนื่องจากสมุทรสงครามเป็นเมืองชายทะเล ชาวบ้านจึงนำเปลือกหอยมาประดิษฐ์เป็นเครื่องประดับและของที่ระลึกที่สวยงาม
+            </p>
+
+            <ul class="info-list">
+                <li>
+                    <span class="list-icon">📿</span>
+                    <div>
+                        <strong>เครื่องประดับ</strong><br>
+                        สร้อยคอ กำไล ต่างหู แหวน จากเปลือกหอย ราคา 100-3,000 บาท
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">🖼️</span>
+                    <div>
+                        <strong>ของตกแต่งบ้าน</strong><br>
+                        กรอบรูป โคมไฟ ที่วางของ ราคา 200-5,000 บาท
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">🔑</span>
+                    <div>
+                        <strong>ของที่ระลึก</strong><br>
+                        พวงกุญแจ ที่คั่นหนังสือ เหมาะเป็นของฝาก ราคา 20-200 บาท
+                    </div>
+                </li>
+            </ul>
+
+            <div class="image-gallery">
+                <div class="gallery-item">📿</div>
+                <div class="gallery-item">💍</div>
+                <div class="gallery-item">🖼️</div>
+                <div class="gallery-item">🔑</div>
+            </div>
+
+            <div class="highlight-box">
+                <strong style="font-size: 1.2rem; color: var(--primary-color);">🛍️ ซื้อได้ที่</strong><br>
+                <p style="margin-top: 0.5rem; line-height: 1.8;">
+                    • ตลาดน้ำอัมพวา<br>
+                    • ดอนหอยหลอด<br>
+                    • ร้านของฝากตามแหล่งท่องเที่ยว<br>
+                    • ตลาดโต้รุ่งแม่กลอง
+                </p>
+            </div>
+        </div>
+
+        <!-- เวิร์คช็อป -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">✋</span>
+                เวิร์คช็อปและคอร์สเรียน
+            </h2>
+
+            <div class="workshop-card">
+                <div class="workshop-name">🧺 เรียนจักสานไม้ไผ่</div>
+                <div class="workshop-detail">
+                    สอนการสานตะกร้าขนาดเล็ก เรียนรู้เทคนิคพื้นฐาน พร้อมนำผลงานกลับบ้าน<br>
+                    <strong>เวลา:</strong> 3 ชั่วโมง | <strong>สถานที่:</strong> บ้านปรก
+                    <span class="price-tag">฿ 500/คน</span>
+                </div>
+            </div>
+
+            <div class="workshop-card">
+                <div class="workshop-name">🧵 เรียนทอผ้าพื้นบ้าน</div>
+                <div class="workshop-detail">
+                    ทดลองทอผ้าขาวม้าด้วยกี่ทอแบบดั้งเดิม เรียนรู้เทคนิคการทอและการย้อมสี<br>
+                    <strong>เวลา:</strong> 3 ชั่วโมง | <strong>สถานที่:</strong> กลุ่มทอผ้าอัมพวา
+                    <span class="price-tag">฿ 500/คน</span>
+                </div>
+            </div>
+
+            <div class="workshop-card">
+                <div class="workshop-name">🐚 ทำเครื่องประดับจากเปลือกหอย</div>
+                <div class="workshop-detail">
+                    สร้างสรรค์สร้อยคอหรือพวงกุญแจด้วยตัวเอง เลือกเปลือกหอยสวยงาม<br>
+                    <strong>เวลา:</strong> 2 ชั่วโมง | <strong>สถานที่:</strong> ดอนหอยหลอด/ตลาดน้ำอัมพวา
+                    <span class="price-tag">฿ 300/คน</span>
+                </div>
+            </div>
+
+            <div class="workshop-card">
+                <div class="workshop-name">💙 ย้อมผ้าคราม</div>
+                <div class="workshop-detail">
+                    เรียนรู้การย้อมผ้าด้วยสีคราม กระบวนการโบราณที่ได้สีสวยและทนทาน<br>
+                    <strong>เวลา:</strong> 4 ชั่วโมง | <strong>สถานที่:</strong> ศูนย์วัฒนธรรมท้องถิ่น
+                    <span class="price-tag">฿ 800/คน</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">💡</span>
+                เคล็ดลับในการเลือกซื้อ
+            </h2>
+            <ul class="info-list">
+                <li>
+                    <span class="list-icon">✅</span>
+                    <div>
+                        <strong>ตรวจสอบคุณภาพ</strong><br>
+                        เลือกสินค้าที่มีการสานหรือทอแน่น ไม่มีรอยขาดหรือเส้นเด่น
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">🏷️</span>
+                    <div>
+                        <strong>เช็คราคา</strong><br>
+                        เปรียบเทียบราคาหลายร้าน ถามถึงกระบวนการทำและวัสดุ
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">🌿</span>
+                    <div>
+                        <strong>เลือกของแท้</strong><br>
+                        ซื้อจากแหล่งผลิตหรือร้านที่เชื่อถือได้
+                    </div>
+                </li>
+                <li>
+                    <span class="list-icon">💰</span>
+                    <div>
+                        <strong>สนับสนุนชุมชน</strong><br>
+                        การซื้อสินค้าหัตถกรรมช่วยสนับสนุนรายได้ชุมชน
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3 class="cta-title">🎨 สนใจเรียนทำงานฝีมือ?</h3>
+            <p>คุยกับน้องสามน้ำเพื่อรับคำแนะนำเกี่ยวกับคอร์สเรียน กิจกรรมเวิร์คช็อป และแหล่งช้อปปิ้งงานหัตถกรรม</p>
+            <a href="#" class="cta-button">💭 สอบถามข้อมูล</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>เกี่ยวกับเรา</h3>
+                <p style="line-height: 1.8; margin-bottom: 1rem;">แพลตฟอร์มการเรียนรู้วัฒนธรรมและมรดกทางวัฒนธรรมของจังหวัดสมุทรสงคราม</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>เมนูหลัก</h3>
+                <ul>
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="tradition-page.html">ประเพณีและเทศกาล</a></li>
+                    <li><a href="craft-art-page.html">ศิลปะและหัตถกรรม</a></li>
+                    <li><a href="food-page.html">อาหารท้องถิ่น</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>ติดต่อเรา</h3>
+                <p style="line-height: 2; opacity: 0.9;">
+                    📧 info@charmofsongkhram.th<br>
+                    📱 02-XXX-XXXX<br>
+                    🕐 จันทร์-ศุกร์ 09:00-17:00 น.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Charm of Samutsongkhram. สงวนลิขสิทธิ์</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Button -->
+    <div class="chat-button">
+        <img src="img/Bot-logo.png" alt="Chat" style="width: 80%; height: 80%; object-fit: contain;">
+    </div>
+</body>
+</html>
