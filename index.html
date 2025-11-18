@@ -489,6 +489,16 @@
         }
     });
 </script>
+    <script>
+    // Force reload chatbot when page fully loaded
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            if (typeof BN !== 'undefined' && typeof BN.reload === 'function') {
+                BN.reload();
+            }
+        }, 1000);
+    });
+</script>
     
     <!-- Modal for detailed information -->
     <div id="cultureModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; overflow-y: auto;">
