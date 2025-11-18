@@ -403,20 +403,42 @@
 
 <!-- Chatbot Integration -->
     <div id="bn-root"></div>
-    <script>window.onload = function() { BN.init({ version: '1.0' }) }</script>
-    <script>
-        (function(d, s, id) {
-            var js, bjs = d.getElementsByTagName(s)[0];
-            if(d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://console.botnoi.ai/customerchat/index.js';
-            bjs.parentNode.insertBefore(js, bjs);
-        } (document, 'script', 'bn-jssdk'));
-    </script>
-    <script>
-        const userLang = navigator.language || navigator.userLanguage;
-        document.querySelector('.bn-customerchat')?.setAttribute('locale', userLang.startsWith('th') ? 'th' : 'en');
-    </script>
+<script>
+    (function(d, s, id) {
+        var js, bjs = d.getElementsByTagName(s)[0];
+        if(d.getElementById(id)) return;
+        js = d.createElement(s); 
+        js.id = id;
+        js.src = 'https://console.botnoi.ai/customerchat/index.js';
+        bjs.parentNode.insertBefore(js, bjs);
+    }(document, 'script', 'bn-jssdk'));
+</script>
+
+<script>
+    // รอให้ DOM โหลดเสร็จ และรอให้ BN พร้อม
+    document.addEventListener('DOMContentLoaded', function() {
+        // ลองเช็คทุก 100ms จนกว่า BN จะพร้อม
+        const initBotChat = setInterval(function() {
+            if (typeof BN !== 'undefined') {
+                BN.init({ version: '1.0' });
+                
+                // ตั้งค่า locale
+                const userLang = navigator.language || navigator.userLanguage;
+                const chatElement = document.querySelector('.bn-customerchat');
+                if (chatElement) {
+                    chatElement.setAttribute('locale', userLang.startsWith('th') ? 'th' : 'en');
+                }
+                
+                clearInterval(initBotChat); // หยุดการเช็ค
+            }
+        }, 100);
+        
+        // หยุดหลัง 10 วินาที ถ้ายังไม่โหลด
+        setTimeout(function() {
+            clearInterval(initBotChat);
+        }, 10000);
+    });
+</script>
     <div class="bn-customerchat"
         bot_id="68f8a69d47ecdfb86c7e3f67"
         bot_logo="img/Bot-logo.png"
