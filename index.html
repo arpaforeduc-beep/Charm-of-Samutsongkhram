@@ -401,30 +401,19 @@
 </div>
 
 <!-- Chatbot Integration -->
-<div id="bn-root"></div>
+ <div id="bn-root"></div>
 
 <!-- โหลดสคริปต์ Botnoi -->
-<script>
-    (function(d, s, id) {
-        var js, bjs = d.getElementsByTagName(s)[0];
-        if(d.getElementById(id)) return;
-        js = d.createElement(s); 
-        js.id = id;
-        js.src = 'https://console.botnoi.ai/customerchat/index.js';
-        js.async = true; // เพิ่ม async
-        bjs.parentNode.insertBefore(js, bjs);
-        
-        // เมื่อสคริปต์โหลดเสร็จ
-        js.onload = function() {
-            console.log('Botnoi script loaded');
-            initializeBot();
-        };
-        
-        js.onerror = function() {
-            console.error('Failed to load Botnoi script');
-        };
-    }(document, 'script', 'bn-jssdk'));
-</script>
+<script>window.onload = function() { BN.init({ version: '1.0' }) }</script>
+    <script>
+        (function(d, s, id) {
+            var js, bjs = d.getElementsByTagName(s)[0];
+            if(d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://console.botnoi.ai/customerchat/index.js';
+            bjs.parentNode.insertBefore(js, bjs);
+        } (document, 'script', 'bn-jssdk'));
+    </script>
 
 <!-- กำหนดค่า Chatbot (ไม่ต้องระบุ locale ตายตัว ให้บอทจัดการเอง) -->
 <div class="bn-customerchat"
