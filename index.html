@@ -438,27 +438,30 @@
     </footer>
 
     <!-- Chatbot Integration -->
-    <div id="bn-root"></div>
-
+ <div id="bn-root"></div>
+    
     <!-- โหลดสคริปต์ Botnoi -->
-    <script>window.onload = function () { BN.init({ version: '1.0' }) }</script>
+    <script>window.onload = function() { BN.init({ version: '1.0' }) }</script>
     <script>
-        (function (d, s, id) {
+        (function(d, s, id) {
             var js, bjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
+            if(d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
             js.src = 'https://console.botnoi.ai/customerchat/index.js';
             bjs.parentNode.insertBefore(js, bjs);
-        }(document, 'script', 'bn-jssdk'));
+        } (document, 'script', 'bn-jssdk'));
     </script>
 
     <!-- กำหนดค่า Chatbot (ไม่ต้องระบุ locale ตายตัว ให้บอทจัดการเอง) -->
-    <div class="bn-customerchat" bot_id="68f8a69d47ecdfb86c7e3f67" bot_logo="img/Bot-logo.png"
-        bot_name="น้องสามน้ำ - Charm of Samutsongkhram" theme_color="#2563eb"
+    <div class="bn-customerchat"
+        bot_id="6936fe5576db8ac0ab0c891b"
+        bot_logo="img/Bot-logo.png"
+        bot_name="น้องสามน้ำ - Charm of Samutsongkhram"
+        theme_color="#2563eb"
         logged_in_greeting="ยินดีให้บริการค่ะ 😄 | Welcome! 😄"
         greeting_message="สวัสดีค่ะ 😊 ยินดีต้อนรับสู่ระบบบริการของเรา ต้องการให้ช่วยเรื่องอะไรดีคะ? | Hello 😊 Welcome to our service! How can I help you?">
     </div>
-
+  
     <script>
         // ฟังก์ชัน Initialize Bot
         function initializeBot() {
