@@ -135,51 +135,8 @@ nav.scrolled {
 }
 
 /* Hero Section */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero-gradient {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(47,72,88,0.92) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(92,122,91,0.4) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 60% at 70% 80%, rgba(139,94,60,0.35) 0%, transparent 60%),
-    linear-gradient(160deg, var(--indigo-deep) 0%, #3D6B5A 45%, var(--brown) 100%);
-}
-
-.hero-texture {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(214,179,106,0.08) 1px, transparent 0);
-  background-size: 32px 32px;
-  opacity: 0.8;
-}
-
-.hero-pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 60px,
-      rgba(214,179,106,0.04) 60px,
-      rgba(214,179,106,0.04) 61px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 60px,
-      rgba(214,179,106,0.04) 60px,
-      rgba(214,179,106,0.04) 61px
-    );
-    
-/* เพิ่มเงาให้ตัวหนังสือ */
+.hero bg:img/bg02.png
+/* เพิ่มเงาให้ตัวหนังสือ *
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
 }
 
